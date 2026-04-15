@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic SEO & Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Hotel Amalfi Coast | The Azure Coast Hotel</title>
+    <meta name="description" content="Escape to The Azure Coast Hotel in Amalfi. Seaside luxury suites, rooftop dining, and private boat tours. Book direct & save 15%. Best price guarantee.">
+    
+    <!-- Preconnect for Speed (Core Web Vitals) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Schema Markup (Technical SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "The Azure Coast Hotel",
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via delle Sirene 15",
+        "addressLocality": "Amalfi",
+        "addressRegion": "Campania",
+        "postalCode": "84011",
+        "addressCountry": "IT"
+      },
+      "priceRange": "€€€€",
+      "starRating": "5"
+    }
+    </script>
+
+    <!-- Deferring Analytics & GTM to prevent render blocking -->
+    <!-- Google Tag Manager (Placeholder) -->
+    <script>
+        // DataLayer initialization for CRO tracking
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+    </script>
+
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --primary-navy: #0b1c2c;
+            --primary-gold: #c5a47e;
+            --text-light: #f8f9fa;
+            --text-dark: #333333;
+            --white: #ffffff;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Mobile Sticky CTA (CRO Strategy) */
+        .mobile-sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            text-align: center;
+            padding: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            z-index: 1000;
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Header */
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(11,28,44,0.8), transparent);
+        }
+
+        .logo {
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 300;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .btn {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            padding: 12px 24px;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: transform 0.2s, background 0.2s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #d4b08e;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-navy);
+        }
+
+        /* Hero Section (Preventing CLS with explicit height) */
+        .hero {
+            height: 100vh;
+            /* Using a solid color fallback + background image to prevent FOUC/LCP delay */
+            background: var(--primary-navy) url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        /* Trust Bar (CRO Strategy) */
+        .trust-bar {
+            background: var(--white);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            border-bottom: 1px solid #eee;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        /* Booking Engine Section (CRO Strategy - Embedded to prevent tab bouncing) */
+        .booking-section {
+            background: var(--primary-navy);
+            padding: 40px 5%;
+            /* FIXED HEIGHT prevents CLS when iframe loads */
+            height: 150px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .booking-widget-container {
+            width: 100%;
+            max-width: 1000px;
+            background: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .booking-widget-container h3 {
+            margin-bottom: 15px;
+            color: var(--primary-navy);
+        }
+
+        /* Rooms Section */
+        .rooms {
+            padding: var(--spacing-lg) 5%;
+            text-align: center;
+        }
+
+        .rooms h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .rooms p {
+            margin-bottom: 40px;
+            color: #666;
+        }
+
+        .room-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .room-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .room-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Explicit width/height prevents CLS */
+        .room-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .room-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .room-price {
+            color: var(--primary-gold);
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-navy);
+            color: var(--white);
+            padding: 60px 5% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Exit Intent Popup */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .popup-content {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-sticky-cta { display: block; }
+            .hero h1 { font-size: 2.5rem; }
+            .trust-bar { gap: 20px; }
+            .booking-section { height: auto; padding: 30px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Sticky CTA (CRO Strategy) -->
+    <a href="#booking" class="mobile-sticky-cta" onclick="trackEvent('mobile_sticky_cta_click', 'Check Availability Mobile')">
+        Check Availability & Save 15%
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Azure Coast</div>
+        <ul class="nav-links">
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#booking">Booking</a></li>
+            <li><a href="#" class="btn btn-outline" onclick="trackEvent('nav_book_click', 'Book Now Nav')">Book Direct</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Seaside Luxury Suites with Panoramic Amalfi Views</h1>
+            <p>Experience the ultimate romantic escape on the Italian coast. Private balconies, world-class dining, and complimentary boat tours.</p>
+            <!-- A/B Test Variable: "Book Now" vs "Check Availability" -->
+            <a href="#booking" class="btn" style="padding: 18px 40px; font-size: 1.2rem;" onclick="trackEvent('hero_cta_click', 'Check Availability Hero')">
+                Check Availability
+            </a>
+        </div>
+    </section>
+
+    <!-- Trust Bar (CRO Strategy) -->
+    <section class="trust-bar">
+        <div class="trust-item">🏆 Best Price Guarantee</div>
+        <div class="trust-item">✈️ Free Cancellation</div>
+        <div class="trust-item">🍷 Complementary Sparkling Wine</div>
+        <div class="trust-item">🚤 Free Boat Tour (Direct Bookings)</div>
+    </section>
+
+    <!-- Embedded Booking Engine (CRO Strategy - Prevents Bounce from new tabs) -->
+    <section class="booking-section" id="booking">
+        <div class="booking-widget-container">
+            <h3>Check Availability & Rates</h3>
+            <!-- In production, the SiteMinder/Cloudbeds iframe goes here. 
+                 We use a fixed height container to completely eliminate CLS (Cumulative Layout Shift). -->
+            <div style="background:#eee; height:60px; display:flex; align-items:center; justify-content:center; border-radius:4px; color:#666;">
+                [ Embedded Booking Engine Iframe loads here ]
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section (CRO Strategy - Showing prices to reduce friction) -->
+    <section class="rooms" id="rooms">
+        <h2>Our Rooms & Suites</h2>
+        <p>Every room features a private balcony overlooking the Mediterranean Sea.</p>
+        
+        <div class="room-grid">
+            <!-- Room 1 -->
+            <div class="room-card">
+                <!-- fetchpriority="high" for above fold, lazy for below fold -->
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d955f4e24?w=600&q=80" alt="Deluxe sea view suite with double bed and balcony at Azure Coast Hotel" class="room-img" loading="lazy" width="600" height="250">
+                <div class="room-info">
+                    <span class="room-price">From €450 / Night</span>
+                    <h3>Deluxe Sea View</h3>
+                    <p>King bed, panoramic balcony, marble bathroom.</p>
+                    <a href="#booking" class="btn" style="margin-top:15px; width:100%; display:block; text-align:center;" onclick="trackEvent('room_card_click', 'Deluxe Sea View')">Select Room</a>
+                </div>
+            </div>
+
+            <!-- Room 2 -->
+            <div class="room-card">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80" alt="Premium honeymoon suite with private jacuzzi in Amalfi" class="room-img" loading="lazy" width="600" height="250">
+                <div class="room-info">
+                    <span class="room-price">From €720 / Night</span>
+                    <h3>Premium Honeymoon Suite</h3>
+                    <p>Private jacuzzi, separate living area, terrace.</p>
+                    <a href="#booking" class="btn" style="margin-top:15px; width:100%; display:block; text-align:center;" onclick="trackEvent('room_card_click', 'Premium Suite')">Select Room</a>
+                </div>
+            </div>
+
+            <!-- Room 3 -->
+            <div class="room-card">
+                <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Presidential villa with private pool on Amalfi coast" class="room-img" loading="lazy" width="600" height="250">
+                <div class="room-info">
+                    <span class="room-price">From €1,200 / Night</span>
+                    <h3>Presidential Villa</h3>
+                    <p>Private infinity pool, personal butler, 180° views.</p>
+                    <a href="#booking" class="btn" style="margin-top:15px; width:100%; display:block; text-align:center;" onclick="trackEvent('room_card_click', 'Presidential Villa')">Select Room</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (SEO & Schema friendly) -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3 style="color: var(--primary-gold); margin-bottom: 20px;">The Azure Coast Hotel</h3>
+                <p style="font-weight: 300;">Via delle Sirene 15, 84011 Amalfi SA, Italy<br>+39 089 831 2345</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 20px;">Explore</h4>
+                <ul>
+                    <li><a href="#">Rooms & Suites</a></li>
+                    <li><a href="#">Rooftop Dining</a></li>
+                    <li><a href="#">Spa & Wellness</a></li>
+                    <li><a href="#">Amalfi Coast Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 20px;">Policies</h4>
+                <ul>
+                    <li><a href="#">Best Price Guarantee</a></li>
+                    <li><a href="#">Cancellation Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 The Azure Coast Hotel. All Rights Reserved. (Agency Managed)
+        </div>
+    </footer>
+
+    <!-- Exit Intent Popup (CRO Strategy) -->
+    <div class="popup-overlay" id="exitPopup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup()">&times;</span>
+            <h2 style="margin-bottom: 10px;">Wait! Don't miss out.</h2>
+            <p style="margin-bottom: 20px; color: #666;">Book direct today and receive a <strong>free 60-minute spa treatment</strong> for two.</p>
+            <a href="#booking" class="btn" onclick="closePopup(); trackEvent('popup_cta_click', 'Exit Intent Spa Offer');">Claim My Free Spa Pass</a>
+        </div>
+    </div>
+
+    <!-- JavaScript (Loaded at the end to prevent FID/Render Blocking) -->
+    <script>
+        // --- GTM / GA4 DataLayer Event Tracking ---
+        function trackEvent(action, label) {
+            console.log('Event Tracked:', action, label); // For your testing
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'custom_booking_event',
+                'event_category': 'Booking Funnel',
+                'event_action': action,
+                'event_label': label
+            });
+        }
+
+        // --- Exit Intent Popup Logic (Desktop only) ---
+        document.addEventListener('mouseout', function(e) {
+            if (e.clientY < 10) {
+                // Check if user hasn't already seen it (using sessionStorage)
+                if (!sessionStorage.getItem('popup_shown')) {
+                    document.getElementById('exitPopup').style.display = 'flex';
+                    sessionStorage.setItem('popup_shown', 'true');
+                    trackEvent('popup_viewed', 'Exit Intent Popup');
+                }
+            }
+        });
+
+        function closePopup() {
+            document.getElementById('exitPopup').style.display = 'none';
+        }
+
+        // --- Smooth Scrolling for Anchor Links ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+    <!-- 
+    ---------------------------------------------------------
+    GOOGLE TAG MANAGER PLACEMENT (Agency Instructions)
+    ---------------------------------------------------------
+    In a real production environment, replace the script block above 
+    with your actual GTM container code placed exactly here, right before </body>.
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    ---------------------------------------------------------
+    -->
+
+</body>
+</html>
